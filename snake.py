@@ -3,10 +3,10 @@ import random
 window = Tk()
 window.title("samim game best develaoper in the world hahha")
 window.resizable(False, False)
-GAME_WIDTH = 700
-GAME_HIEGHT = 700
+GAME_WIDTH = 500
+GAME_HIEGHT = 500
 SPEED = 20
-SPACE_SIZE = 50
+SPACE_SIZE = 30
 BODY_PARTS = 3
 SNAKE_COLOR = "#39F900"
 FOOD_COLOR = "#FFF133"
