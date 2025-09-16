@@ -45,10 +45,18 @@ canva = Canvas(window, bg=BACKGROUND, width=GAME_WIDTH , height=GAME_HIEGHT)
 canva.pack()
 snake = Snake()
 food = Food()
-# window.update()
-# window_height = window.winfo_height()
-# window_width = window.winfo_width()
-# screen_width = window.winfo_screenwidth()
-# screen_height = window.winfo_screenheight()
+window.update() 
+window_width = window.winfo_width()
+window_height = window.winfo_height()
+screen_width = window.winfo_screenwidth()
+screen_height = window.winfo_screenheight()
+
+window_x = int((screen_width/2) - (window_width/2))
+window_y = int((screen_height/2) - (window_height/2))
+
+#format "(w)x(h)+(x)+(y)"
+window.geometry(f"{window_width}x{window_height}+{window_x}+{window_y}")
+
+window.mainloop()
 
 window.mainloop()
