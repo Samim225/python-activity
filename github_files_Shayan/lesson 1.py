@@ -15,6 +15,9 @@ x = input()
 y = int(x)
 gam2 = Calculato(0,0,0)
 
+def init():
+   print("this is nanana")
+init()
 
 
 while True: print(eval(input('>>>')))
