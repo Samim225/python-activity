@@ -1,0 +1,17 @@
+from tkinter import *
+root = Tk()
+root.geometry("400x400")
+root.resizable(False, False)
+root.title("To-Do List")
+label = Label(root, text="To-Do List", font=("Arial", 24))
+label.pack()
+canva = Canvas(root, width=400, height=300)
+task = Entry()
+def add_task():
+    task.get()
+    canva.create_text(200, 20, text=task.get(), font=("Arial", 16))
+task.pack()
+canva.pack()
+button = Button(root, text="add" , command=add_task)
+button.pack()
+root.mainloop()

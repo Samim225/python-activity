@@ -16,9 +16,21 @@ BACKGROUND = "#31BDF4"
 
 
 class Snake:
-    pass
+    def __init__(self):
+        (self)
+        self.body = BODY_PARTS
+        self.coordinate = []
+        self.squares = []
+       
+        for i in range(BODY_PARTS):
+            self.coordinate.append([0,0])
+        for x,y in self.coordinate:
+            squares = canva.create_rectangle(
+                x,y, x + SPACE_SIZE, y + SPACE_SIZE,
+                fill=SNAKE_COLOR, tag = "snake"
+            )
 class Food:
-    pass
+    
     def __init__(self):
         x = random.randint(0, GAME_WIDTH // SPACE_SIZE -1) * SPACE_SIZE
         y = random.randint(0, GAME_HIEGHT // SPACE_SIZE -1) * SPACE_SIZE
@@ -40,7 +52,6 @@ def game_over():
 score = 0
 label = Label(window, text="Score {}".format(score), font=("consolas",40))
 label.pack()
-
 canva = Canvas(window, bg=BACKGROUND, width=GAME_WIDTH , height=GAME_HIEGHT)
 canva.pack()
 snake = Snake()
@@ -50,13 +61,9 @@ window_width = window.winfo_width()
 window_height = window.winfo_height()
 screen_width = window.winfo_screenwidth()
 screen_height = window.winfo_screenheight()
-
 window_x = int((screen_width/2) - (window_width/2))
 window_y = int((screen_height/2) - (window_height/2))
-
 #format "(w)x(h)+(x)+(y)"
 window.geometry(f"{window_width}x{window_height}+{window_x}+{window_y}")
-
 window.mainloop()
-
 window.mainloop()

@@ -1,1 +1,298 @@
-jan jigar
+import tkinter as tk
+root = tk.Tk()
+
+root.title("Simple Calculator")
+root.geometry("500x500")
+
+num1 = tk.Entry(root)
+num2 = tk.Entry(root)
+
+num1.pack()
+num2.pack()
+
+resultArea = tk.Label(root, text="Result: ", foreground="red")
+resultArea.pack()
+
+
+def sumNumbers():
+    results = int(num1.get()) + int(num2.get())
+    resultArea.config(text=f"Result is: {results}")
+
+btn = tk.Button(root, text="equals to", command=sumNumbers, bg="green" )
+btn.pack()
+
+root.mainloop()
+
+
+
+
+
+
+
+
+
+ Python
+window.update() 
+window_width = window.winfo_width()
+window_height = window.winfo_height()
+screen_width = window.winfo_screenwidth()
+screen_height = window.winfo_screenheight()
+
+window_x = int((screen_width/2) - (window_width/2))
+window_y = int((screen_height/2) - (window_height/2))
+
+#format "(w)x(h)+(x)+(y)"
+window.geometry(f"{window_width}x{window_height}+{window_x}+{window_y}")
+
+window.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+#window setup
+window = tkinter.Tk() #create the window
+window.title("Calculator")
+window.resizable(True, True)
+
+frame = tkinter.Frame(window)
+label = tkinter.Label(frame, text="0", font=("AvantGarde", 45), background=color_black,
+                      foreground=color_red, anchor="w", width=column_count)
+
+
+label.grid(row=0, column=0, columnspan=column_count, sticky="we")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ python
+import tkinter 
+button_values = [
+    ["AC", "+/-", "%", "÷"], 
+    ["7", "8", "9", "×"], 
+    ["4", "5", "6", "-"],
+    ["1", "2", "3", "+"],
+    ["0", ".", "√", "="]
+]
+
+right_symbols = ["÷", "×", "-", "+", "="]
+top_symbols = ["AC", "+/-", "%"]
+
+row_count = len(button_values) #5
+column_count = len(button_values[0]) #4
+
+color_light_gray = "#D4D4D2"
+color_black = "#1C1C1C"
+color_dark_gray = "#505050"
+color_red = "#FF0000"
+color_white = "white"
+
+#window setup
+window = tkinter.Tk() #create the window
+window.title("Calculator")
+window.resizable(False, False)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Create a class called Vehicle and make Car, Boat, Plane child classes of Vehicle:
+
+class Vehicle:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Move!")
+
+class Car(Vehicle):
+  pass
+
+class Boat(Vehicle):
+  def move(self):
+    print("Sail!")
+
+class Plane(Vehicle):
+  def move(self):
+    print("Fly!")
+
+car1 = Car("Ford", "Mustang")       #Create a Car object
+boat1 = Boat("Ibiza", "Touring 20") #Create a Boat object
+plane1 = Plane("Boeing", "747")     #Create a Plane object
+
+for x in (car1, boat1, plane1):
+  print(x.brand)
+  print(x.model)
+  x.move()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Car:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Drive!")
+
+class Boat:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Sail!")
+
+class Plane:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Fly!")
+
+car1 = Car("Ford", "Mustang")       #
+boat1 = Boat("Ibiza", "Touring 20") #
+plane1 = Plane("Boeing", "747")     #
+
+for x in (car1, boat1, plane1):
+  x.move()
+
+
+
+
+
+
+
+
+
+
+
+prson:
+    - name
+    - age
+    - introduce()
+
+Student (extends Person):
+    - grade
+    - courses (list)
+    - enroll_course(...courses)
+    - introduce()  // extends Person.introduce using super
+
+Teacher (extends Person):
+    - subject
+    - salary
+    - introduce()  // extends Person.introduce using super
+
+Principal (extends Teacher):
+    - office_number
+    - introduce()  // extends Teacher.introduce using super
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def introduce(self):
+        print(f"Hello my name is: {self.name} and my age is: {self.age}")
+        
+class Student(Person):
+    def __init__(self, name, age, grade):
+        super().__init__(name,age)
+        self.grade = grade
+        self.courses = []
+        
+    def enroll_courses(self, *course):
+        self.courses.extend(course)
+        print(f"student {self.name} enrolled: {self.courses}")
+        
+    def introduce(self):
+        super().introduce()
+        print(f"and I am at the: {self.grade} grade")
+        
+
+class Teacher(Person):
+    def __init__(self, name, age, subject, salary):
+        super().__init__(name, age)
+        self.subject = subject
+        self.salary =  salary
+        
+    def introduce(self):
+        super().introduce()
+        print(f"and my salary is: {self.salary} also I teach: {self.subject}")
+        
+class Principle(Teacher):
+    def __init__(self, name, age, subject, salary, office_number):
+        super().__init__(name, age, subject, salary) 
+        self.office_number = office_number
+        
+    def introduce(self):
+        super().introduce()
+        print(f"My office number is {self.office_number} and I manage the school.")
+        
+person1 = Person("Ahmad", 20)
+person1.introduce()
+print()
+
+student1 = Student("Samim", 15, 7)
+student1.introduce()
+print()
+student1.enroll_courses("computer", "English", "Math", "Physic", "Chemistry")
