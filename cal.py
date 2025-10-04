@@ -1,23 +1,33 @@
-import tkinter as tk
-root = tk.Tk()
-root.title("samim")
-root.geometry("500x500")
+# نصب کتابخانه‌ها (اگر نصب نیست)
+# pip install numpy scikit-learn tensorflow
 
-num1 = tk.Entry(root)
-num2 = tk.Entry(root)
-num1.pack()
-num2.pack()
+import numpy as np
+from sklearn.model_selection import train_test_split
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 
-def plus():
-    res = int(num1.get()) + int(num2.get())
-res = 0
-def mines():
-    re = int(num1.get()) - int(num2.get())
-    resA.config = re
-resA = tk.Label(root , text="Result: {}".format(res), foreground="black")
-resA.pack()
-btn = tk.Button(root , text="+" ,command= plus)
-btn2 = tk.Button(root , text="-" ,command= mines)
-# equal= tk.Button(root, text="equal", foreground="red",command= results)
-btn.pack(), btn2.pack(), #equal.pack()
-tk.mainloop()
+# داده‌های آموزشی: قد (cm) → وزن (kg)
+X = np.array([150, 160, 170, 180, 190], dtype=float)
+y = np.array([50, 55, 65, 70, 80], dtype=float)
+
+# تبدیل داده‌ها به شکل (نمونه‌ها، ویژگی‌ها)
+X = X.reshape(-1, 1)
+
+# تقسیم داده‌ها به آموزش و تست
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# تعریف مدل شبکه عصبی
+model = Sequential()
+model.add(Dense(10, input_dim=1, activation='relu'))  # لایه پنهان با 10 نورون
+model.add(Dense(1))  # لایه خروجی (وزن)
+
+# کامپایل مدل
+model.compile(optimizer='adam', loss='mean_squared_error')
+
+# آموزش مدل
+model.fit(X_train, y_train, epochs=500, verbose=0)
+
+# پیش‌بینی
+predicted = model.predict(X_test)
+for i, val in enumerate(X_test):
+    print(f"قد: {val[0]}, وزن واقعی: {y_test[i]}, وزن پیش‌بینی: {predicted[i][0]:.2f}")

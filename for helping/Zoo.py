@@ -30,18 +30,16 @@ class Snake(Animal):
 class Zoo:
     def __init__(self):
         self.animal = []
-    def add_animal(self)
+    def add_animal(self):
         if not isinstance(self.animal, Animal):
             print("Only animals allowed")
-             
         else:
             self.animal.append(Animal)
-
 loin = Loin("Simba", 5)
 parrot = Parrot("Polly", 2)
 snake = Snake("kaa", 4)
 zoo = Zoo()
 # zoo.add_animal("loin")
-zoo.add_animal("parrot")
+zoo.add_animal()
 # zoo.add_animal("snake")
 parrot.speak()    

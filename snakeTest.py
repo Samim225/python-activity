@@ -2,7 +2,7 @@ from tkinter import *
 import random
 window = Tk()
 window.title("Snake Game")
-GAME_HEGIT = 500
+GAME_HEIGHT = 500
 GAME_WIDTH = 500
 SNAKE_COLOR = "#246f80"
 FOOD_COLOR = "#8D90E6"
@@ -11,7 +11,7 @@ SPACE_SIZE = 50
 BODY_PARTS = 4
 BACKGROUND_COLOR = "#4B4647"
 score = 0
-canva = Canvas(window, bg=BACKGROUND_COLOR , height= GAME_HEGIT, width=GAME_WIDTH)
+canva = Canvas(window, bg=BACKGROUND_COLOR , height= GAME_HEIGHT, width=GAME_WIDTH)
 label = Label(window, text="Score:{}".format(score), font=("consolas", 40))
 class Snake:
     def __init__(self):
@@ -27,13 +27,19 @@ class Snake:
             )
 class Food:
     def __init__(self):
-        x = random.randint(0, GAME_HEGIT // SPACE_SIZE) * SPACE_SIZE
+        x = random.randint(0, GAME_HEIGHT // SPACE_SIZE) * SPACE_SIZE
         y = random.randint(0, GAME_WIDTH // SPACE_SIZE) * SPACE_SIZE
         self.coordinate = [x,y]
         canva.create_oval(
+            
             x,y, x + SPACE_SIZE, y + SPACE_SIZE,
             fill=FOOD_COLOR, tag = "food"
         )
+        
+def check_colission(snake):
+    if x < 0 or x>= GAME_WIDTH:
+        return True
+    elif y < 0 y>=GAME_HEIGHT
 label.pack()
 canva.pack()
 snake = Snake()

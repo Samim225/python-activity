@@ -42,4 +42,5 @@ while True :
                 else:
                     True
         else:
-              print("enter name")   
+              print("enter name")
+              continue

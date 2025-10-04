@@ -15,18 +15,18 @@ while True:
         sa(1)
         
         print(samim)
-    # elif vote == "shayan" or "Shayan":
-    #     shayan +=1
-    #     print(shayan)
+    elif vote == "shayan" or "Shayan":
+        shayan +=1
+        print(shayan)
     else:
         print("enter an person name")
-        bre
-    # if samim == 10 and samim > shayan:
-    #     print("the winner is: Samim")
-    #     break
-    # elif shayan == 10 and samim < shayan:
-    #     print("the winner is: Shayan")
-    #     break
-    # else:
-    #     print("nanan")
+        
+    if samim == 10 and samim > shayan:
+        print("the winner is: Samim")
+        break
+    elif shayan == 10 and samim < shayan:
+        print("the winner is: Shayan")
+        break
+    else:
+        print("nanan")
         
